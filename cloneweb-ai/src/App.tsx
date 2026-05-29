@@ -11,6 +11,9 @@ import DashboardLayout from './layouts/DashboardLayout';
 // Pages
 import LandingPage from './pages/LandingPage';
 import DashboardOverview from './pages/dashboard/DashboardOverview';
+import ProjectsPage from './pages/dashboard/ProjectsPage';
+import GenerationsPage from './pages/dashboard/GenerationsPage';
+import SettingsPage from './pages/dashboard/SettingsPage';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,6 +55,9 @@ function App() {
         {/* Dashboard Pages */}
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<DashboardOverview />} />
+          <Route path="projects" element={<ProjectsPage />} />
+          <Route path="generations" element={<GenerationsPage />} />
+          <Route path="settings" element={<SettingsPage />} />
         </Route>
       </Routes>
     </Router>

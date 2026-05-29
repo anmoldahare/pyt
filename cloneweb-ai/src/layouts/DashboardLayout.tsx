@@ -1,4 +1,4 @@
-import { Outlet, Link, useLocation } from 'react-router-dom';
+import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { 
   Bot, 
   LayoutDashboard, 
@@ -20,6 +20,11 @@ const navigation = [
 
 export default function DashboardLayout() {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate('/');
+  };
 
   return (
     <div className="flex h-screen bg-background text-text overflow-hidden">
@@ -60,7 +65,10 @@ export default function DashboardLayout() {
         </div>
 
         <div className="p-4 border-t border-border">
-          <button className="flex items-center gap-3 px-4 py-2.5 w-full rounded-lg font-medium text-muted hover:bg-gray-50 hover:text-red-600 transition-colors">
+          <button 
+            onClick={handleLogout}
+            className="flex items-center gap-3 px-4 py-2.5 w-full rounded-lg font-medium text-muted hover:bg-gray-50 hover:text-red-600 transition-colors"
+          >
             <LogOut className="w-5 h-5" />
             Log out
           </button>

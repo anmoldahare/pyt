@@ -1,44 +1,57 @@
-import { motion } from 'framer-motion';
-import { LayoutTemplate, ScanEye, Code2, Layers, RefreshCcw, Settings2 } from 'lucide-react';
-
-const features = [
-  { icon: LayoutTemplate, title: "DOM Intelligence", desc: "Extracts precise semantic HTML and layout structures." },
-  { icon: ScanEye, title: "Visual Regression", desc: "Pixel-by-pixel SSIM analysis to ensure 100% accuracy." },
-  { icon: Code2, title: "React Generation", desc: "Produces modular, clean, and typed React components." },
-  { icon: Layers, title: "Asset Extraction", desc: "Automatically downloads and optimizes SVGs and images." },
-  { icon: RefreshCcw, title: "Multi-Round Repair", desc: "Self-corrects layout inconsistencies autonomously." },
-  { icon: Settings2, title: "Dynamic Content", desc: "Identifies and creates props for dynamic text and data." }
-];
 
 export default function Scene10Features() {
   return (
-    <div className="py-32 bg-white relative">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20">
-          <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-2">Core Capabilities</h2>
-          <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-text">
-            Everything you need. <br />Nothing you don't.
-          </h3>
-        </div>
+    <section id="features" className="section-container">
+      <div className="flex items-baseline gap-5 mb-12 pb-5 border-b-2 border-[var(--ink)]">
+        <span className="font-mono text-[11px] tracking-[0.1em] text-[var(--muted)] uppercase">03</span>
+        <h2>Key <em>features</em> & metrics</h2>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feat, i) => (
-            <motion.div 
-              key={i}
-              whileHover={{ y: -8, transition: { duration: 0.2 } }}
-              className="p-8 rounded-3xl border border-border bg-surface hover:shadow-xl transition-shadow group cursor-default"
-            >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <feat.icon className="w-6 h-6" />
-              </div>
-              <h4 className="text-xl font-bold text-text mb-3">{feat.title}</h4>
-              <p className="text-muted leading-relaxed">
-                {feat.desc}
-              </p>
-            </motion.div>
-          ))}
+      <div className="data-grid grid-cols-2 md:grid-cols-4">
+        <div className="data-grid-item">
+          <div className="font-mono text-[11px] tracking-[0.06em] text-[var(--muted)] uppercase mb-2">Tailwind v4</div>
+          <div className="font-mono text-3xl text-[var(--ink)] leading-none">100%</div>
+          <div className="font-mono text-[10px] text-[var(--muted)] mt-1">Utility class coverage</div>
+        </div>
+        <div className="data-grid-item">
+          <div className="font-mono text-[11px] tracking-[0.06em] text-[var(--muted)] uppercase mb-2">Components</div>
+          <div className="font-mono text-3xl text-[var(--ink)] leading-none text-[var(--red)]">Auto</div>
+          <div className="font-mono text-[10px] text-[var(--muted)] mt-1">Intelligent extraction</div>
+        </div>
+        <div className="data-grid-item">
+          <div className="font-mono text-[11px] tracking-[0.06em] text-[var(--muted)] uppercase mb-2">Typescript</div>
+          <div className="font-mono text-3xl text-[var(--ink)] leading-none text-[var(--green)]">Strict</div>
+          <div className="font-mono text-[10px] text-[var(--muted)] mt-1">Type definitions</div>
+        </div>
+        <div className="data-grid-item">
+          <div className="font-mono text-[11px] tracking-[0.06em] text-[var(--muted)] uppercase mb-2">Export</div>
+          <div className="font-mono text-3xl text-[var(--ink)] leading-none text-[var(--amber)]">ZIP</div>
+          <div className="font-mono text-[10px] text-[var(--muted)] mt-1">Ready-to-run package</div>
         </div>
       </div>
-    </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px] bg-[var(--ink)] border-2 border-[var(--ink)] my-8">
+        <div className="bg-[var(--paper)] p-9">
+          <div className="font-mono text-[10px] tracking-[0.12em] uppercase text-[var(--muted)] mb-3">Feature 01</div>
+          <div className="text-[22px] italic mb-4 text-[var(--ink)] font-serif">Pixel-Perfect Recreation</div>
+          <div className="text-[15px] text-[var(--muted)] leading-[1.65] font-mono">
+            CloneWeb AI ensures that the generated React application matches the exact visual specs of the source, translating complex absolute positioning and flex layouts faithfully.
+          </div>
+          <div className="mt-5 p-3.5 bg-black/5 border-l-[3px] border-[var(--amber)] font-mono text-[12px] text-[var(--amber)] italic leading-[1.6]">
+            "Output visually indistinguishable from source."
+          </div>
+        </div>
+        <div className="bg-[var(--paper)] p-9">
+          <div className="font-mono text-[10px] tracking-[0.12em] uppercase text-[var(--muted)] mb-3">Feature 02</div>
+          <div className="text-[22px] italic mb-4 text-[var(--ink)] font-serif">Clean Code Architecture</div>
+          <div className="text-[15px] text-[var(--muted)] leading-[1.65] font-mono">
+            Instead of a single massive file, the engine splits repeating patterns into reusable React components (e.g., Cards, Buttons, Navbars).
+          </div>
+          <div className="mt-5 p-3.5 bg-black/5 border-l-[3px] border-[var(--green)] font-mono text-[12px] text-[var(--green)] italic leading-[1.6]">
+            "Follows standard frontend best practices."
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
