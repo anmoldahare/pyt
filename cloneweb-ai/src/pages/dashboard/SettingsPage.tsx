@@ -63,10 +63,10 @@ export default function SettingsPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Sidebar Nav */}
-        <div className="flex flex-col space-y-1.5 font-mono text-xs uppercase tracking-wider">
+        <div className="flex flex-row md:flex-col overflow-x-auto whitespace-nowrap space-x-2 md:space-x-0 md:space-y-1.5 pb-2 md:pb-0 font-mono text-xs uppercase tracking-wider">
           <button 
             onClick={() => setActiveSection('General')}
-            className={`w-full text-left px-4 py-3 border-2 transition-all flex items-center gap-2.5 font-bold ${
+            className={`px-4 py-3 border-2 transition-all flex items-center justify-center md:justify-start gap-2.5 font-bold flex-1 md:flex-none md:w-full shrink-0 ${
               activeSection === 'General' 
                 ? 'bg-[var(--ink)] text-[var(--paper)] border-[var(--ink)]' 
                 : 'border-[var(--border)] text-[var(--muted)] hover:border-[var(--ink)] hover:text-[var(--ink)] bg-[var(--paper)]'
@@ -78,7 +78,7 @@ export default function SettingsPage() {
           
           <button 
             onClick={() => setActiveSection('API')}
-            className={`w-full text-left px-4 py-3 border-2 transition-all flex items-center gap-2.5 font-bold ${
+            className={`px-4 py-3 border-2 transition-all flex items-center justify-center md:justify-start gap-2.5 font-bold flex-1 md:flex-none md:w-full shrink-0 ${
               activeSection === 'API' 
                 ? 'bg-[var(--ink)] text-[var(--paper)] border-[var(--ink)]' 
                 : 'border-[var(--border)] text-[var(--muted)] hover:border-[var(--ink)] hover:text-[var(--ink)] bg-[var(--paper)]'
@@ -90,7 +90,7 @@ export default function SettingsPage() {
 
           <button 
             onClick={() => setActiveSection('Preferences')}
-            className={`w-full text-left px-4 py-3 border-2 transition-all flex items-center gap-2.5 font-bold ${
+            className={`px-4 py-3 border-2 transition-all flex items-center justify-center md:justify-start gap-2.5 font-bold flex-1 md:flex-none md:w-full shrink-0 ${
               activeSection === 'Preferences' 
                 ? 'bg-[var(--ink)] text-[var(--paper)] border-[var(--ink)]' 
                 : 'border-[var(--border)] text-[var(--muted)] hover:border-[var(--ink)] hover:text-[var(--ink)] bg-[var(--paper)]'

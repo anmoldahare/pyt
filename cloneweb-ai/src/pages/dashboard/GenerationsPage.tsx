@@ -164,7 +164,7 @@ export default function GenerationsPage() {
       {/* Filter and search */}
       <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
         {/* Tab filters */}
-        <div className="flex border-2 border-[var(--ink)] p-0.5 bg-[var(--paper-dark)] font-mono text-xs">
+        <div className="flex border-2 border-[var(--ink)] p-0.5 bg-[var(--paper-dark)] font-mono text-xs overflow-x-auto whitespace-nowrap">
           {(['All', 'Completed', 'Processing', 'Failed'] as const).map((filter) => {
             const isActive = activeFilter === filter;
             const count = filter === 'All' 
@@ -174,7 +174,7 @@ export default function GenerationsPage() {
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-4 py-2 uppercase tracking-wider font-semibold transition-all ${
+                className={`px-4 py-2 uppercase tracking-wider font-semibold transition-all shrink-0 ${
                   isActive 
                     ? 'bg-[var(--ink)] text-[var(--paper)]' 
                     : 'text-[var(--muted)] hover:text-[var(--ink)] hover:bg-[var(--border)]/30'

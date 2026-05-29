@@ -162,7 +162,7 @@ export default function ProjectsPage() {
       {/* Interactive Tabs & Search Bar */}
       <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
         {/* Brutalist Tab Selector */}
-        <div className="flex border-2 border-[var(--ink)] p-0.5 bg-[var(--paper-dark)] font-mono text-xs">
+        <div className="flex border-2 border-[var(--ink)] p-0.5 bg-[var(--paper-dark)] font-mono text-xs overflow-x-auto whitespace-nowrap">
           {(['All', 'Active', 'Archived'] as const).map((tab) => {
             const isActive = activeTab === tab;
             const count = tab === 'All' 
@@ -172,7 +172,7 @@ export default function ProjectsPage() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 uppercase tracking-wider font-semibold transition-all ${
+                className={`px-4 py-2 uppercase tracking-wider font-semibold transition-all shrink-0 ${
                   isActive 
                     ? 'bg-[var(--ink)] text-[var(--paper)]' 
                     : 'text-[var(--muted)] hover:text-[var(--ink)] hover:bg-[var(--border)]/30'
@@ -377,12 +377,12 @@ export default function ProjectsPage() {
               </div>
 
               {/* Card Footer Actions */}
-              <div className="p-4 bg-[var(--paper-dark)] flex items-center justify-between border-t border-[var(--border)]">
+              <div className="p-4 bg-[var(--paper-dark)] flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-t border-[var(--border)]">
                 <span className="font-mono text-[10px] text-[var(--muted)]">
                   SYNCED: {project.lastSynced.toUpperCase()}
                 </span>
                 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-wrap">
                   <button 
                     onClick={() => alert(`Starting React generation build for ${project.name}`)}
                     className="flex items-center gap-1.5 bg-[var(--ink)] text-[var(--paper)] px-3 py-1.5 border border-[var(--ink)] font-mono text-[9px] uppercase tracking-wider hover:bg-transparent hover:text-[var(--ink)] transition-all font-bold cursor-pointer"
@@ -400,7 +400,7 @@ export default function ProjectsPage() {
                   <button 
                     onClick={() => handleDeleteProject(project.id)}
                     title="Delete project"
-                    className="p-1.5 border border-[var(--border)] text-[var(--muted)] hover:text-[var(--red)] hover:border-[var(--red)] transition-all"
+                    className="p-1.5 border border-[var(--border)] text-[var(--muted)] hover:text-[var(--red)] hover:border-[var(--red)] transition-all cursor-pointer"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
                   </button>
