@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #F8F7F4;
+  --color-surface: #FFFFFF;
+  --color-primary: #4F46E5;
+  --color-secondary: #6366F1;
+  --color-accent: #8B5CF6;
+  --color-text: #111827;
+  --color-muted: #6B7280;
+  --color-success: #10B981;
+  --color-border: rgba(0, 0, 0, 0.08);
+
+  --font-sans: "Inter", "Roboto", "Outfit", system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: #F8F7F4;
+    --surface: #FFFFFF;
+    --primary: #4F46E5;
+    --secondary: #6366F1;
+    --accent: #8B5CF6;
+    --text: #111827;
+    --muted: #6B7280;
+    --success: #10B981;
+    --border: rgba(0, 0, 0, 0.08);
+  }
+
+  html,
+  body {
+    @apply bg-background text-text font-sans antialiased selection:bg-primary/30;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* Lenis smooth scroll recommended styles */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-border shadow-[0_8px_32px_rgba(0,0,0,0.04)];
+  }
+  
+  .glass-card {
+    @apply bg-white/50 backdrop-blur-lg border border-border shadow-[0_4px_24px_rgba(0,0,0,0.02)] rounded-2xl;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+  
+  .text-gradient-subtle {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-text to-muted;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .luxury-shadow {
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.05), 0 0 20px rgba(0,0,0,0.02);
+  }
+}
