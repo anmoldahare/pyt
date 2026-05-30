@@ -4,7 +4,7 @@ export default function Scene1Hero() {
     <header className="border-b-2 border-[var(--ink)] relative overflow-hidden">
       <div className="flex justify-between items-center px-6 md:px-12 py-4 border-b border-[var(--border)] font-mono text-[11px] text-[var(--muted)] tracking-[0.08em] uppercase">
         <span>CloneWeb AI — Code Generation</span>
-        <span>React · Tailwind · Typescript</span>
+        <span></span>
       </div>
       <div className="pt-16 pb-12 px-6 md:px-12 grid grid-cols-1 md:grid-cols-[1fr_340px] gap-12 items-end">
         <div className="fade-up">
